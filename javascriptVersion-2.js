@@ -37,6 +37,28 @@ function showInfoOfChosenCity(event) {
   }
 }
 
+function defaultCity1() {
+  let defaultTimezone1 = "Asia/Hong_Kong";
+  let formattedDefaultTimezone1 = defaultTimezone1
+    .replace("_", " ")
+    .split("/")[1];
+  let defaultCity1 = document.querySelector("#defaultCity1");
+  defaultCity1.innerHTML = `${formattedDefaultTimezone1}`;
+
+  let cityTime = document.querySelector("#defaultCityCurrentTime");
+  let time = moment().tz(`${defaultTimezone1}`).format("HH:mm:ss");
+  cityTime.innerHTML = `${time}`;
+
+  let cityDate = document.querySelector("#defaultCityDate");
+  let date = moment().tz(`${defaultTimezone1}`).format("ddd, D MMM YYYY");
+  cityDate.innerHTML = `${date}`;
+
+  let cityUTC = document.querySelector("#defaultCityUTC");
+  let UTC = moment().tz(`${defaultTimezone1}`).format("[UTC]Z");
+  cityUTC.innerHTML = `${UTC}`;
+}
+defaultCity1();
+
 function showUserCurrentTimezone() {
   let userCurrentCity = moment.tz.guess();
   let userCurrentCityFormattedName = userCurrentCity
@@ -49,7 +71,7 @@ function showUserCurrentTimezone() {
   let userDate = document.querySelector("#userCurrentDate");
   userDate.innerHTML = moment()
     .tz(`${userCurrentCity}`)
-    .format("dddd, D MMM YYYY");
+    .format("ddd, D MMM YYYY");
   let userTimeOffset = document.querySelector("#userCityUTC");
   userTimeOffset.innerHTML = moment().tz(`${userCurrentCity}`).format("[UTC]Z");
 }

@@ -36,12 +36,12 @@ body {
   border-radius: 60px;
   display: block;
   margin: 4px auto;
-  max-width: 500px;
+  max-width: 100%;
   transition: all 200ms ease-in-out;
   box-shadow: -1px -1px 21px rgba(0, 0, 0, 0.1);
 }
 .bigWidgetPadding {
-  max-width: 500px;
+  max-width: 100%;
   box-shadow: -1px -1px 21px rgba(75, 75, 75, 0.2);
 }
 .widgetPadding:hover,
@@ -64,7 +64,8 @@ body {
   justify-content: flex-start;
   margin-top: 22px;
 }
-.userCityName {
+.userCityName,
+.defaultCity1Name {
   font-size: 33px;
   display: flex;
   justify-content: center;
