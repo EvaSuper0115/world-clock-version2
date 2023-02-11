@@ -62,6 +62,7 @@ body {
   color: rgba(163, 163, 163, 0.932);
   display: flex;
   justify-content: flex-start;
+  margin-top: 8px;
 }
 .userCityName {
   font-size: 24px;
@@ -90,6 +91,7 @@ body {
 .timeOffsetwidget {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 8px;
 }
 .timeDifferenceDisplayText {
   display: flex;
