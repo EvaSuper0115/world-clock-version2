@@ -121,8 +121,12 @@ form {
   border-width: 0;
   transition: all 200ms ease-in-out;
 }
-.crossSign {
-  font-size: 20px;
+#crossButton {
+  font-size: 22px;
+  background: none;
+  border-radius: 50px;
+  color: #6ca0ce;
+  border-width: 0;
 }
 #theme-colors-widget {
   font-size: 20px;

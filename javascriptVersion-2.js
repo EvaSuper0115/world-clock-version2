@@ -81,6 +81,15 @@ setInterval(showUserCurrentTimezone, 1000);
 let userChoice = document.querySelector("#user-chosen-timezones");
 userChoice.addEventListener("change", showInfoOfChosenCity);
 
+function clearClocks(event) {
+  event.preventDefault();
+  let content = document.querySelector("#chosenCityInfos");
+  content.innerHTML = ` `;
+}
+
+let clear = document.querySelector("#crossButton");
+clear.addEventListener("click", clearClocks);
+
 //change theme function//
 function changeTheme(event) {
   let selectedThemeName = event.target.value;
