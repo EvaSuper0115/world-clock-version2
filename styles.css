@@ -58,14 +58,14 @@ body {
 }
 .cityName {
   font-family: var(--accent-font);
-  font-size: 20px;
+  font-size: 25px;
   color: rgba(163, 163, 163, 0.932);
   display: flex;
   justify-content: flex-start;
-  margin-top: 8px;
+  margin-top: 22px;
 }
 .userCityName {
-  font-size: 24px;
+  font-size: 33px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -91,7 +91,7 @@ body {
 .timeOffsetwidget {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 8px;
+  margin-bottom: 13px;
 }
 .timeDifferenceDisplayText {
   display: flex;
