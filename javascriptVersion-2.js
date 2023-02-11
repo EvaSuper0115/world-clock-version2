@@ -13,46 +13,27 @@ function showInfoOfChosenCity(event) {
       .format("[UTC]Z");
 
     let chosenCity1Info = document.querySelector("#chosenCityInfos");
-    chosenCity1Info.innerHTML += ` <div id="chosenCity" class="cityName">${userChosenCityFormattedName}</div>
+    chosenCity1Info.innerHTML += ` 
+    
+    <div id="chosenCity" class="cityName">
+    ${userChosenCityFormattedName}
+    </div>
 
-            <div id="chosenCityTime" class="timeDisplayText">${timezoneTime} </div>
+    <div id="chosenCityTime" class="timeDisplayText">
+    ${timezoneTime} 
+    </div>
 
-            <div id="chosenCitytDate" class="dateDisplayText">${timezoneDate}</div>
-            <div class="timeOffsetwidget">
-              <div
-                id="timeDifferenceChosenCity1"
-                class="timeDifferenceDisplayText"
-              >${chosenCityTimeOffset}</div>
-            </div>`;
-  }
-}
-
-function showInfoOfChosenCity2(event) {
-  let userChosenTimeZoneValue = event.target.value;
-  if (userChosenTimeZoneValue.length > 0) {
-    let userChosenCityFormattedName = userChosenTimeZoneValue
-      .replace("_", " ")
-      .split("/")[1];
-    let now = moment().tz(`${userChosenTimeZoneValue}`);
-    let timezoneTime = now.format("HH:mm:ss");
-    let timezoneDate = now.format("ddd, D MMM YYYY");
-    let chosenCityTimeOffset = moment()
-      .tz(`${userChosenTimeZoneValue}`)
-      .format("[UTC]Z");
-
-    let chosenCity = document.querySelector("#chosenCity2");
-    chosenCity.innerHTML = `${userChosenCityFormattedName}`;
-
-    let chosenCityTime = document.querySelector("#chosenCityTime2");
-    chosenCityTime.innerHTML = `${timezoneTime} `;
-
-    let chosenCityDate = document.querySelector("#chosenCitytDate2");
-    chosenCityDate.innerHTML = `${timezoneDate}`;
-
-    let chosenCityTimeDifference = document.querySelector(
-      "#timeDifferenceChosenCity2"
-    );
-    chosenCityTimeDifference.innerHTML = `${chosenCityTimeOffset}`;
+    <div id="chosenCitytDate" class="dateDisplayText">
+    ${timezoneDate}
+    </div>
+    <div class="timeOffsetwidget">
+      <div
+      id="timeDifferenceChosenCity1"
+      class="timeDifferenceDisplayText"
+      >${chosenCityTimeOffset}
+      </div>
+    </div>
+    `;
   }
 }
 
@@ -75,60 +56,10 @@ function showUserCurrentTimezone() {
 
 setInterval(showUserCurrentTimezone, 1000);
 
-function defaultDisplay1() {
-  let defaultCity = "Asia/Hong_Kong";
-  let defaultCityFormattedName = defaultCity.replace("_", " ").split("/")[1];
-  let defaultCityName = document.querySelector("#chosenCity");
-
-  defaultCityName.innerHTML = `${defaultCityFormattedName}`;
-
-  let defaultCityTime = document.querySelector("#chosenCityTime");
-  defaultCityTime.innerHTML = moment().tz(`${defaultCity}`).format("HH:mm:ss");
-
-  let defaultCityDate = document.querySelector("#chosenCitytDate");
-  defaultCityDate.innerHTML = moment()
-    .tz(`${defaultCity}`)
-    .format("ddd, D MMM YYYY");
-
-  let defaultCityTimeOffset = document.querySelector(
-    "#timeDifferenceChosenCity1"
-  );
-  defaultCityTimeOffset.innerHTML = moment()
-    .tz(`${defaultCity}`)
-    .format("[UTC]Z");
-}
-
 let userChoice = document.querySelector("#user-chosen-timezones");
 userChoice.addEventListener("change", showInfoOfChosenCity);
 
-defaultDisplay1();
-
-function defaultDisplay2() {
-  let defaultCity = "Asia/Tokyo";
-  let defaultCityFormattedName = defaultCity.replace("_", " ").split("/")[1];
-  let defaultCityName = document.querySelector("#chosenCity2");
-  defaultCityName.innerHTML = `${defaultCityFormattedName}`;
-
-  let defaultCityTime = document.querySelector("#chosenCityTime2");
-  defaultCityTime.innerHTML = moment().tz(`${defaultCity}`).format("HH:mm:ss");
-
-  let defaultCityDate = document.querySelector("#chosenCitytDate2");
-  defaultCityDate.innerHTML = moment()
-    .tz(`${defaultCity}`)
-    .format("ddd, D MMM YYYY");
-
-  let defaultCityTimeOffset = document.querySelector(
-    "#timeDifferenceChosenCity2"
-  );
-  defaultCityTimeOffset.innerHTML = moment()
-    .tz(`${defaultCity}`)
-    .format("[UTC]Z");
-
-  let userChoice2 = document.querySelector("#user-chosen-timezones2");
-  userChoice2.addEventListener("change", showInfoOfChosenCity2);
-}
-defaultDisplay2();
-
+//change theme function//
 function changeTheme(event) {
   let selectedThemeName = event.target.value;
   console.log(selectedThemeName);
