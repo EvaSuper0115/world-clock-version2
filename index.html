@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js
+"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body class="container">
+    <div class="row header">
+      <div class="worldClockTitle">World Clocks</div>
+      <div class="themeSelector">
+        <form>
+          <select id="theme-colors-widget">
+            <option value="natural">🍃Natural</option>
+            <option value="cool">🖤Cool</option>
+            <option value="romantic">🌹La vie en rose</option>
+            <option value="dawn">🌙Dawn</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div class="row topRow">
+      <div class="bigWidgetPadding">
+        <div class="contentOfEachWidget">
+          <div id="userCurrentTimezone" class="cityName userCityName">
+            loading...
+          </div>
+
+          <div id="userCurrentTime" class="userTimeDisplayText"></div>
+
+          <div id="userCurrentDate" class="dateDisplayText"></div>
+          <div class="timeOffsetwidget">
+            <div id="userCityUTC" class="timeDifferenceDisplayText"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="widgetPadding p-1">
+        <div class="contentOfEachWidget">
+          <form class="chooseCity">
+            <select
+              id="user-chosen-timezones"
+              class="formWidget shadow-sm"
+              autofocus="on"
+            >
+              <option value="" name="">-select timezone-</option>
+
+              <option value="America/New_York">New York</option>
+              <option value="Asia/Hong_Kong">Hong Kong</option>
+              <option value="Asia/Seoul">Seoul</option>
+              <option value="Asia/Singapore">Singapore</option>
+              <option value="Asia/Tokyo">Tokyo</option>
+              <option value="Asia/Taipei">Taipei</option>
+
+              <option value="Europe/London">London</option>
+              <option value="Europe/Madrid">Madrid</option>
+
+              <option value="Canada/Newfoundland">Newfoundland</option>
+            </select>
+          </form>
+          <div id="chosenCityInfos"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="widgetPadding p-1">
+        <div class="contentOfEachWidget">
+          <form class="chooseCity">
+            <select id="user-chosen-timezones2" class="formWidget shadow-sm">
+              <option value="" name="">-select timezone-</option>
+              <option value="Africa/Asmara">Asmara</option>
+              <option value="Africa/Asmera">Asmera</option>
+              <option value="Africa/Bamako">Bamako</option>
+              <option value="Africa/Bangui">Bangui</option>
+              <option value="Africa/Banjul">Banjul</option>
+              <option value="America/Argentina/Cordoba">Cordoba</option>
+              <option value="America/Argentina/Jujuy">Jujuy</option>
+              <option value="America/Argentina/La_Rioja">La_Rioja</option>
+              <option value="America/Argentina/Mendoza">Mendoza</option>
+              <option value="America/Argentina/Rio_Gallegos">
+                Rio Gallegos
+              </option>
+              <option value="America/Argentina/Salta">Salta</option>
+              <option value="America/Argentina/San_Juan">San Juan</option>
+              <option value="America/Argentina/San_Luis">San Luis</option>
+              <option value="America/Los_Angeles">Los Angeles</option>
+              <option value="America/New_York">New York</option>
+              <option value="America/Montreal">Montreal</option>
+              <option value="Australia/Melbourne">Melbourne</option>
+              <option value="Australia/NSW">NSW</option>
+              <option value="Australia/North">North</option>
+              <option value="Australia/Perth">Perth</option>
+              <option value="Australia/Queensland">Queensland</option>
+              <option value="Australia/South">South</option>
+              <option value="Australia/Sydney">Sydney</option>
+              <option value="Australia/Tasmania">Tasmania</option>
+              <option value="Australia/Victoria">Victoria</option>
+              <option value="Australia/West">West</option>
+              <option value="Australia/Yancowinna">Yancowinna</option>
+              <option value="Brazil/Acre">Acre</option>
+              <option value="Brazil/DeNoronha">DeNoronha</option>
+              <option value="Brazil/East">East</option>
+              <option value="Brazil/West">West</option>
+              <option value="Asia/Bangkok">Bangkok</option>
+              <option value="Asia/Barnaul">Barnaul</option>
+              <option value="Asia/Beirut">Beirut</option>
+              <option value="Asia/Bishkek">Bishkek</option>
+              <option value="Asia/Brunei">Brunei</option>
+              <option value="Asia/Calcutta">Calcutta</option>
+              <option value="Asia/Chita">Chita</option>
+              <option value="Asia/Choibalsan">Choibalsan</option>
+              <option value="Asia/Chongqing">Chongqing</option>
+              <option value="Asia/Chungking">Chungking</option>
+              <option value="Asia/Colombo">Colombo</option>
+              <option value="Asia/Dacca">Dacca</option>
+              <option value="Asia/Damascus">Damascus</option>
+              <option value="Asia/Dhaka">Dhaka</option>
+              <option value="Asia/Dili">Dili</option>
+              <option value="Asia/Dubai">Dubai</option>
+              <option value="Asia/Hong_Kong">Hong Kong</option>
+              <option value="Asia/Seoul">Seoul</option>
+              <option value="Asia/Singapore">Singapore</option>
+              <option value="Asia/Tokyo">Tokyo</option>
+              <option value="Asia/Taipei">Taipei</option>
+              <option value="Europe/Amsterdam">Amsterdam</option>
+              <option value="Europe/Andorra">Andorra</option>
+              <option value="Europe/Astrakhan">Astrakhan</option>
+              <option value="Europe/Athens">Athens</option>
+              <option value="Europe/Berlin">Berlin</option>
+              <option value="Europe/Lisbon">Lisbon</option>
+              <option value="Europe/London">London</option>
+
+              <option value="Europe/Madrid">Madrid</option>
+              <option value="Europe/Moscow">Moscow</option>
+              <option value="Europe/Oslo">Oslo</option>
+              <option value="Europe/Paris">Paris</option>
+              <option value="Canada/Eastern">Eastern</option>
+              <option value="Canada/Mountain">Mountain</option>
+              <option value="Canada/Newfoundland">Newfoundland</option>
+              <option value="Canada/Pacific">Pacific</option>
+              <option value="Canada/Saskatchewan">Saskatchewan</option>
+            </select>
+          </form>
+          <div id="chosenCity2" class="cityName"></div>
+
+          <div id="chosenCityTime2" class="timeDisplayText"></div>
+
+          <div id="chosenCitytDate2" class="dateDisplayText"></div>
+          <div class="timeOffsetwidget">
+            <div
+              id="timeDifferenceChosenCity2"
+              class="timeDifferenceDisplayText"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      World Clock was designed and coded by
+      <a
+        href="https://golden-madeleine-3016d7.netlify.app"
+        target="_blank"
+        title="On Tai To Website"
+      >
+        On Tai To</a
+      >
+      , is open-sourced on
+      <a
+        href="https://github.com/EvaSuper0115/World-clock"
+        target="_blank"
+        title="source code on GitHub"
+      >
+        GitHub</a
+      >
+      , and hosted on Netlify.
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./javascript.js"></script>
+  </body>
+</html>
