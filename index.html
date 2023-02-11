@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="World Clock project built by On Tai To - a frontend developer"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World Clock</title>
+    <title>World Clock | On Tai To</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js
 "></script>
@@ -23,6 +27,10 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/9bb5a0ce89.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body class="container">
@@ -77,6 +85,9 @@
     <div class="row">
       <div class="widgetPadding p-4">
         <div class="contentOfEachWidget">
+          <a class="crossSign" href="index.html"
+            ><i class="fa-solid fa-xmark"></i
+          ></a>
           <form class="chooseCity">
             <select
               id="user-chosen-timezones"
