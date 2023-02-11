@@ -13,7 +13,7 @@ function showInfoOfChosenCity(event) {
       .format("[UTC]Z");
 
     let chosenCity1Info = document.querySelector("#chosenCityInfos");
-    chosenCity1Info.innerHTML += ` 
+    chosenCity1Info.innerHTML = ` 
     
     <div id="chosenCity" class="cityName">
     ${userChosenCityFormattedName}
