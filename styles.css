@@ -137,6 +137,19 @@ form {
 a {
   text-decoration: none;
 }
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px 240px;
+  }
+}
+@media (min-width: 992px) {
+  .cityName {
+    font-size: 40px;
+  }
+  .timeDisplayText {
+    font-size: 57px;
+  }
+}
 @media (max-width: 576px) {
   form,
   .cityName {
