@@ -57,7 +57,7 @@ function defaultCity1() {
   let UTC = moment().tz(`${defaultTimezone1}`).format("[UTC]Z");
   cityUTC.innerHTML = `${UTC}`;
 }
-defaultCity1();
+setInterval(defaultCity1, 1000);
 
 function showUserCurrentTimezone() {
   let userCurrentCity = moment.tz.guess();

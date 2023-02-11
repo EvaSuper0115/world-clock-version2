@@ -74,7 +74,7 @@ body {
 .userTimeDisplayText {
   display: flex;
   justify-content: center;
-  font-size: 60px;
+  font-size: 49px;
   font-weight: 500;
 }
 .timeDisplayText {
