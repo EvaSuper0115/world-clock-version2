@@ -36,6 +36,7 @@ function showInfoOfChosenCity(event) {
     `;
   }
 }
+
 function displayDefaultCity2() {
   let defaultCity2Value = "Europe/Madrid";
   let defaultCity2 = document.querySelector("#defaultCity2");

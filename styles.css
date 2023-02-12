@@ -64,7 +64,8 @@ body {
   justify-content: flex-start;
   margin-top: 12px;
 }
-#chosenCity {
+#chosenCity,
+#defaultCity2 {
   margin: auto 20px;
 }
 .userCityName,
