@@ -33,7 +33,7 @@ body {
 .widgetPadding,
 .bigWidgetPadding {
   background: var(--widget-background);
-  border-radius: 60px;
+  border-radius: 50px;
   display: block;
   margin: 4px auto;
   max-width: 100%;
@@ -54,7 +54,7 @@ body {
   margin-right: 12px;
 }
 .contentOfEachWidget {
-  padding: 15px;
+  padding: 5px;
 }
 .cityName {
   font-family: var(--accent-font);
@@ -62,11 +62,14 @@ body {
   color: rgba(163, 163, 163, 0.932);
   display: flex;
   justify-content: flex-start;
-  margin-top: 22px;
+  margin-top: 12px;
+}
+#chosenCity {
+  margin: auto 20px;
 }
 .userCityName,
 .defaultCity1Name {
-  font-size: 33px;
+  font-size: 26px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -74,17 +77,17 @@ body {
 .userTimeDisplayText {
   display: flex;
   justify-content: center;
-  font-size: 49px;
+  font-size: 40px;
   font-weight: 500;
 }
 .timeDisplayText {
-  font-size: 45px;
+  font-size: 40px;
   display: flex;
   justify-content: center;
   font-weight: 500;
 }
 .dateDisplayText {
-  font-size: 22px;
+  font-size: 17px;
   display: flex;
   justify-content: center;
   color: rgb(136 134 134 / 96%);
@@ -93,6 +96,7 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 13px;
+  margin-right: 26px;
 }
 .timeDifferenceDisplayText {
   display: flex;
@@ -120,6 +124,8 @@ form {
   opacity: 0.7;
   border-width: 0;
   transition: all 200ms ease-in-out;
+  margin-right: 12px;
+  margin-left: 12px;
 }
 #crossButton {
   font-size: 22px;
@@ -127,6 +133,7 @@ form {
   border-radius: 50px;
   color: #6ca0ce;
   border-width: 0;
+  margin-left: 12px;
 }
 #theme-colors-widget {
   font-size: 20px;
@@ -163,7 +170,7 @@ a {
     justify-content: center;
   }
 }
-@media (max-width: 290px) {
+@media (max-width: 301px) {
   #userCurrentTime {
     font-size: 49px;
   }

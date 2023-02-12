@@ -36,6 +36,27 @@ function showInfoOfChosenCity(event) {
     `;
   }
 }
+function displayDefaultCity2() {
+  let defaultCity2Value = "Europe/Madrid";
+  let defaultCity2 = document.querySelector("#defaultCity2");
+  defaultCity2.innerHTML = defaultCity2Value.replace("_", " ").split("/")[1];
+
+  let defaultCity2Time = moment().tz(`${defaultCity2Value}`).format("HH:mm:ss");
+  let city2Time = document.querySelector("#defaultCity2Time");
+  city2Time.innerHTML = `${defaultCity2Time}`;
+
+  let defaultCity2Date = moment()
+    .tz(`${defaultCity2Value}`)
+    .format("ddd, D MMM YYYY");
+  let city2Date = document.querySelector("#defaultCity2Date");
+  city2Date.innerHTML = `${defaultCity2Date}`;
+
+  let defaultCity2UTC = moment().tz(`${defaultCity2Value}`).format("[UTC]Z");
+  let city2UTC = document.querySelector("#timeDifferencedefaultCity2");
+  city2UTC.innerHTML = `${defaultCity2UTC}`;
+}
+
+setInterval(displayDefaultCity2, 1000);
 
 function defaultCity1() {
   let defaultTimezone1 = "Asia/Hong_Kong";
