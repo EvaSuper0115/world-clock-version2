@@ -112,6 +112,24 @@ function clearClocks(event) {
 let clear = document.querySelector("#crossButton");
 clear.addEventListener("click", clearClocks);
 
+function clearDefaultCity1(event) {
+  event.preventDefault();
+  let content = document.querySelector("#defaultCity1info");
+  content.innerHTML = ``;
+
+  let col = document.querySelector("#transformCol");
+  col.classList.add("col-md-12");
+
+  let widget1 = document.querySelector("#firstWidget");
+  widget1.classList.add("widgetMaxWidthWhenClosed");
+
+  let widget3 = document.querySelector("#thirdWidget");
+  widget3.classList.add("widgetMaxWidthWhenClosed");
+}
+
+let crossoutDefaultCity1 = document.querySelector("#crossButtonDefaultCity1");
+crossoutDefaultCity1.addEventListener("click", clearDefaultCity1);
+
 //change theme function//
 function changeTheme(event) {
   let selectedThemeName = event.target.value;

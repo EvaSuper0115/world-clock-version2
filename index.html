@@ -35,7 +35,6 @@
   </head>
   <body class="container">
     <div class="row header">
-      <div class="worldClockTitle">World Clocks</div>
       <div class="themeSelector">
         <form>
           <select id="theme-colors-widget">
@@ -48,9 +47,10 @@
       </div>
     </div>
     <div class="row topRow">
-      <div class="col-md-6">
-        <div class="bigWidgetPadding">
+      <div id="transformCol" class="col-md-6">
+        <div id="firstWidget" class="bigWidgetPadding">
           <div class="contentOfEachWidget">
+            <div class="worldClockTitle">World Clocks</div>
             <div id="userCurrentTimezone" class="cityName userCityName">
               loading...
             </div>
@@ -65,15 +65,26 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="bigWidgetPadding">
-          <div class="contentOfEachWidget">
-            <div id="defaultCity1" class="cityName defaultCity1Name"></div>
+        <div id="defaultCity1info">
+          <div class="bigWidgetPadding">
+            <div class="contentOfEachWidget">
+              <button id="crossButtonDefaultCity1">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div id="defaultCity1" class="cityName defaultCity1Name"></div>
 
-            <div id="defaultCityCurrentTime" class="userTimeDisplayText"></div>
+              <div
+                id="defaultCityCurrentTime"
+                class="userTimeDisplayText"
+              ></div>
 
-            <div id="defaultCityDate" class="dateDisplayText"></div>
-            <div class="timeOffsetwidget">
-              <div id="defaultCityUTC" class="timeDifferenceDisplayText"></div>
+              <div id="defaultCityDate" class="dateDisplayText"></div>
+              <div class="timeOffsetwidget">
+                <div
+                  id="defaultCityUTC"
+                  class="timeDifferenceDisplayText"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +94,7 @@
     <div class="row topRow"></div>
 
     <div class="row">
-      <div class="widgetPadding p-1">
+      <div id="thirdWidget" class="widgetPadding p-1">
         <div class="contentOfEachWidget">
           <button id="crossButton">
             <i class="fa-solid fa-xmark"></i>

@@ -21,12 +21,12 @@ body {
 }
 
 .worldClockTitle {
-  font-size: 30px;
-  margin: 10px;
+  font-size: 24px;
+  margin: 9px;
   display: flex;
   justify-content: center;
   font-weight: 900;
-  opacity: 0.6;
+  opacity: 0.3;
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ body {
 .cityName {
   font-family: var(--accent-font);
   font-size: 25px;
-  color: rgba(163, 163, 163, 0.932);
+  color: rgb(133 131 131);
   display: flex;
   justify-content: flex-start;
   margin-top: 12px;
@@ -128,6 +128,7 @@ form {
   margin-right: 12px;
   margin-left: 12px;
 }
+#crossButtonDefaultCity1,
 #crossButton {
   font-size: 22px;
   background: none;
@@ -135,10 +136,12 @@ form {
   color: #6ca0ce;
   border-width: 0;
   margin-left: 12px;
+  margin-top: 10px;
 }
 #theme-colors-widget {
   font-size: 20px;
-  text-align: center;
+  margin: 15px;
+  margin-top: 3px;
 }
 .formWidget:hover,
 #theme-colors-widget:hover {
@@ -152,39 +155,7 @@ form {
 a {
   text-decoration: none;
 }
-@media (min-width: 1200px) {
-  .container {
-    padding: 20px 240px;
-  }
-}
-@media (min-width: 992px) {
-  .cityName {
-    font-size: 40px;
-  }
-  .timeDisplayText {
-    font-size: 57px;
-  }
-}
-@media (max-width: 576px) {
-  form,
-  .cityName {
-    justify-content: center;
-  }
-}
-@media (max-width: 301px) {
-  #userCurrentTime {
-    font-size: 49px;
-  }
-  .cityName {
-    font-size: 17px;
-  }
-  .timeDisplayText {
-    font-size: 34px;
-  }
-  .timeOffsetwidget {
-    display: none;
-  }
-}
+
 .dark {
   background: linear-gradient(to right, #2e2d2d 0%, black 100%);
   color: white;
@@ -263,6 +234,10 @@ a {
 .dawn {
   background-image: linear-gradient(-225deg, #ccbac3 0%, #6ca0ce 100%);
 }
+.dawn .worldClockTitle {
+  color: #fffafa;
+  opacity: 0.9;
+}
 .dawn .bigWidgetPadding,
 .dawn .widgetPadding {
   background-image: linear-gradient(-20deg, #1a244c 0%, #4e4376 100%);
@@ -280,4 +255,43 @@ a {
 .dawn .footer,
 .dawn a {
   color: #fffafa;
+}
+.widgetMaxWidthWhenClosed {
+  max-width: 500px;
+}
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px 240px;
+  }
+}
+@media (min-width: 992px) {
+  .cityName {
+    font-size: 32px;
+  }
+  .timeDisplayText {
+    font-size: 40px;
+  }
+  .container-md {
+    max-width: 790px;
+  }
+}
+@media (max-width: 576px) {
+  form,
+  .cityName {
+    justify-content: center;
+  }
+}
+@media (max-width: 301px) {
+  #userCurrentTime {
+    font-size: 49px;
+  }
+  .cityName {
+    font-size: 17px;
+  }
+  .timeDisplayText {
+    font-size: 34px;
+  }
+  .timeDifferenceDisplayText .formWidget {
+    font-size: 11px;
+  }
 }
